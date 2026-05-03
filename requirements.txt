@@ -1,0 +1,13 @@
+flask
+flask-cors
+opencv-python-headless
+numpy
+scikit-learn
+python-dotenv
+torch
+torchvision
+pillow
+supabase
+pandas
+ultralytics
+gunicorn
