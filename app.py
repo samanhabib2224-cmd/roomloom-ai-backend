@@ -14,5 +14,5 @@ def home():
     return "AI Backend Running"
 
 if __name__ == "__main__":
-    print_report() 
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+   # print_report()
+    app.run(host="0.0.0.0")

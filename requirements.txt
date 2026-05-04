@@ -11,3 +11,4 @@ supabase
 pandas
 ultralytics
 gunicorn
+requests
