@@ -13,3 +13,4 @@ python-dotenv
 pandas
 requests
 joblib
+boto3

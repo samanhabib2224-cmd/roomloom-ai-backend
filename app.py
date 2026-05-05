@@ -1,8 +1,16 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Download model weights from S3 before any service imports them
+from download_models import download_models
+download_models()
+
 from flask import Flask
 from flask_cors import CORS
 from routes.ai_routes import ai_bp
 from analytics.model_report import print_report
-import os   
 
 app = Flask(__name__)
 CORS(app)
