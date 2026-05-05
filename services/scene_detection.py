@@ -9,7 +9,7 @@ class SceneDetector:
     def __init__(self):
         self.model = models.resnet18(num_classes=365)
 
-        checkpoint = torch.load(MODEL_PATH, map_location="cpu")
+        checkpoint = torch.load(MODEL_PATH, map_location="cpu", weights_only=False)
         state_dict = {k.replace("module.", ""): v for k, v in checkpoint["state_dict"].items()}
         self.model.load_state_dict(state_dict)
 

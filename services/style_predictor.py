@@ -9,7 +9,7 @@ class StyleModel:
         self.model.fc = torch.nn.Linear(self.model.fc.in_features, 5)
 
         self.model.load_state_dict(
-            torch.load("models/style_model.pth", map_location="cpu")
+            torch.load("models/style_model.pth", map_location="cpu", weights_only=False)
         )
 
         self.model.eval()
