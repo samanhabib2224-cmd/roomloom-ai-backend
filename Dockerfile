@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y \
     libxext6 \
     libxrender1 \
     libxcb1 \
+    libgomp1 \
+    libgl1-mesa-glx \
     && apt-get clean
 
 COPY . .
@@ -15,6 +17,9 @@ COPY . .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-ENV PORT=7860
+EXPOSE 8000
 
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:7860", "--timeout", "120"]
+ENV PORT=8000
+
+# Download models from S3, then start gunicorn
+CMD ["sh", "-c", "python download_models.py && gunicorn app:app --bind 0.0.0.0:8000 --timeout 180 --workers 2"]
