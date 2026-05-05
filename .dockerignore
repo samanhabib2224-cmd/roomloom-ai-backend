@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.env
+dataset/
+models/*.pth
+models/*.pth.tar
+models/*.pkl
+models/*.pt
+upload_models.py
